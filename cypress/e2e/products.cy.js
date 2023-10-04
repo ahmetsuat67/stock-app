@@ -13,7 +13,7 @@ describe("products-test", () => {
     cy.get("[data-test='productsHeader']")
       .contains("Products")
       .should("be.visible");
-    // cy.wait(20000);
+   
     cy.get("[data-test='productsBtn']", { timeout: 20000 })
       .contains("NEW PRODUCT")
       .should("be.visible")
@@ -55,8 +55,9 @@ describe("products-test", () => {
     cy.get(
       '[aria-colindex="6"] > .MuiDataGrid-columnHeaderDraggableContainer > .MuiDataGrid-columnHeaderTitleContainer > .MuiDataGrid-columnHeaderTitleContainerContent > .MuiDataGrid-columnHeaderTitle'
     ).should("be.visible");
-    cy.get("[data-test='deleteBtn5']")
+    cy.get("[data-testid='DeleteForeverIcon']")
       .should("be.visible")
+      .first()
       .click({ force: true });
   });
 });

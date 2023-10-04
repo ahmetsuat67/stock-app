@@ -19,12 +19,13 @@ describe("firms-test", () => {
         cy.get("[data-test='firmCardAdress']").should("be.visible");
         cy.get("[data-test='firmCardImage']").should("be.visible");
         cy.get("[data-test='firmCardPhone']").should("be.visible");
-        cy.get("[data-test='editBtn']").should("be.visible").click({ force: true });
+        cy.get("[data-test='editBtn']").first().should("be.visible").click({ force: true });
         cy.get("input[name='name']").clear().type("Test Firm Edited");
         cy.get("input[name='phone']").clear().type("1234567891");
         cy.get("input[name='address']").clear().type("Test Address Edited");
         cy.get("input[name='image']").clear().type("https://docs.cypress.io/img/logo/cypress-logo-dark.png");
         cy.get("[data-test='firmsSbmt']").should("be.visible").click({ force: true });
+        cy.get("[data-testid='DeleteOutlineIcon']").first().should("be.visible").click({ force: true });
        
         
         

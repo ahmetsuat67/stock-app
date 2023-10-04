@@ -5,7 +5,7 @@ describe("register-test", () => {
   });
 
   it("register", () => {
-
+    cy.url().should("include", "/");
     cy.get("[data-test='registerLink']")
       .should("be.visible")
       .click({ force: true });
